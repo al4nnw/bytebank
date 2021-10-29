@@ -48,7 +48,7 @@ class FormularioTransferencia extends StatelessWidget {
 
   void _criaTransferencia(BuildContext context) {
     if (_isTransferenciaValida()) {
-      final double valor = double.parse(_controladorCampoValor.text);
+      final double valor = double.tryParse(_controladorCampoValor.text.replaceAll(",", "."))!;
       if (_isSaldoValido(context, valor)) {
         final novaTransferencia = Transferencia(valor);
         _atualizaEstado(context, novaTransferencia);

@@ -6,10 +6,10 @@ class Transacao {
   final String valor;
 
   Transacao.deposito(this.tipoTransacao)
-      : titulo = "Novo depósito feito em " + DateFormat("dd/MM/yyyy").format(DateTime.now()),
-        valor = "R\$ " + tipoTransacao.valor.toString();
+      : titulo = "Novo depósito feito em\n" + DateFormat("dd/MM/yyyy").format(DateTime.now()),
+        valor = "R\$ " + tipoTransacao.valor.toStringAsFixed(2);
 
   Transacao.transferencia(this.tipoTransacao)
-      : titulo = "Nova transferência feita em" + DateFormat("dd/MM/yyyy").format(DateTime.now()),
-        valor = "R\$ " + tipoTransacao.valor.toString();
+      : titulo = "Nova transferência feita em\n" + DateFormat("dd/MM/yyyy").format(DateTime.now()),
+        valor = "R\$ " + tipoTransacao.valor.toStringAsFixed(2);
 }

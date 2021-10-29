@@ -39,7 +39,7 @@ class FormDeposito extends StatelessWidget {
   }
 
   void _depositar(context) {
-    final double? valor = double.tryParse(_controllerCampoDeposito.text);
+    final double? valor = double.tryParse(_controllerCampoDeposito.text.replaceAll(",", "."));
     if (valor != null) {
       _atualizaSaldo(context, Deposito(valor));
       Navigator.pop(context);

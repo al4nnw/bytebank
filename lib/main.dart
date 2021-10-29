@@ -1,3 +1,4 @@
+import 'package:bytebank/components/scroll_behavior.dart';
 import 'package:bytebank/models/transacoes.dart';
 import 'package:bytebank/screens/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,6 +22,7 @@ class BytebankApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        fontFamily: "SourceSansPro",
         colorScheme:
             ColorScheme.fromSwatch(primarySwatch: Colors.green).copyWith(secondary: Colors.blue[700]),
         buttonTheme: ButtonThemeData(

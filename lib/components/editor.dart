@@ -38,9 +38,7 @@ class Editor extends StatelessWidget {
               borderSide: BorderSide(color: Colors.red[400]!, width: 1.0),
               borderRadius: BorderRadius.circular(12)),
         ),
-
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly], // Only numbers can be entered
-        keyboardType: TextInputType.number,
+        keyboardType: const TextInputType.numberWithOptions(decimal: true),
       ),
     );
   }

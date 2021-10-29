@@ -21,6 +21,6 @@ class Saldo extends ChangeNotifier {
 
   @override
   String toString() {
-    return 'R\$ $valorSaldo';
+    return 'R\$ ${valorSaldo.toStringAsFixed(2)}';
   }
 }
