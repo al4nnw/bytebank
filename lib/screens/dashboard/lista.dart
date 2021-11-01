@@ -1,4 +1,4 @@
-import '/models/transacoes.dart';
+import '/modelos/transacoes.dart';
 import '/screens/dashboard/widgets/nenhuma_transacao.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

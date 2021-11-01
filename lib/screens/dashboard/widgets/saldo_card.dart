@@ -1,4 +1,4 @@
-import 'package:bytebank/models/saldo.dart';
+import 'package:bytebank/modelos/saldo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

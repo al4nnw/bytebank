@@ -1,8 +1,8 @@
 import 'package:bytebank/components/editor.dart';
-import 'package:bytebank/models/deposito.dart';
-import 'package:bytebank/models/saldo.dart';
-import 'package:bytebank/models/transacao.dart';
-import 'package:bytebank/models/transacoes.dart';
+import 'package:bytebank/modelos/deposito.dart';
+import 'package:bytebank/modelos/saldo.dart';
+import 'package:bytebank/modelos/transacao.dart';
+import 'package:bytebank/modelos/transacoes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

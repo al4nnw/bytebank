@@ -15,10 +15,10 @@ class NenhumaTransacao extends StatelessWidget {
               bottomRight: Radius.circular(30))),
       color: Colors.grey[500],
       child: const Padding(
-        padding: EdgeInsets.all(30.0),
+        padding: EdgeInsets.all(25.0),
         child: Text(
           "Você não fez nenhuma transação ainda.",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+          style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20, color: Colors.white),
         ),
       ),
     );

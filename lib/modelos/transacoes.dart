@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_final_fields
-import 'package:bytebank/models/transacao.dart';
+import 'package:bytebank/modelos/transacao.dart';
 import 'package:bytebank/screens/dashboard/widgets/item_transacao.dart';
 import 'package:flutter/cupertino.dart';
 

@@ -1,5 +1,5 @@
-import 'package:bytebank/models/deposito.dart';
-import 'package:bytebank/models/transferencia.dart';
+import 'package:bytebank/modelos/deposito.dart';
+import 'package:bytebank/modelos/transferencia.dart';
 import 'package:flutter/material.dart';
 
 class Saldo extends ChangeNotifier {

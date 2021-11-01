@@ -1,19 +1,22 @@
-import 'package:bytebank/components/scroll_behavior.dart';
-import 'package:bytebank/models/transacoes.dart';
+import 'package:bytebank/database/app_database.dart';
+import 'package:bytebank/modelos/contato.dart';
+import 'package:bytebank/modelos/transacoes.dart';
 import 'package:bytebank/screens/dashboard/dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'models/saldo.dart';
+import 'modelos/saldo.dart';
 
-void main() => runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => Saldo(0)),
-        ChangeNotifierProvider(create: (context) => Transacoes())
-      ],
-      child: const BytebankApp(),
-    ));
+void main() async {
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => Saldo(0)),
+      ChangeNotifierProvider(create: (context) => Transacoes())
+    ],
+    child: const BytebankApp(),
+  ));
+}
 
 class BytebankApp extends StatelessWidget {
   const BytebankApp({Key? key}) : super(key: key);
@@ -21,6 +24,7 @@ class BytebankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "SourceSansPro",
         colorScheme:

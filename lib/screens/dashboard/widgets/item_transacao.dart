@@ -1,6 +1,6 @@
 import 'package:bytebank/estilos/cores.dart';
-import 'package:bytebank/models/deposito.dart';
-import 'package:bytebank/models/transacao.dart';
+import 'package:bytebank/modelos/deposito.dart';
+import 'package:bytebank/modelos/transacao.dart';
 import 'package:flutter/material.dart';
 
 class ItemTransacao extends StatelessWidget {
@@ -10,10 +10,10 @@ class ItemTransacao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20.0),
+      padding: const EdgeInsets.only(bottom: 15.0),
       child: ListTile(
         contentPadding: const EdgeInsets.all(15),
-        tileColor: Colors.grey[500],
+        tileColor: Colors.grey[400],
         leading: Container(
           decoration: BoxDecoration(
               shape: BoxShape.circle,
@@ -30,7 +30,7 @@ class ItemTransacao extends StatelessWidget {
         ),
         subtitle: Text(
           _transacao.valor,
-          style: const TextStyle(fontWeight: FontWeight.w900, color: cinza),
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w900, color: cinza),
         ),
         isThreeLine: true,
         shape: const RoundedRectangleBorder(
