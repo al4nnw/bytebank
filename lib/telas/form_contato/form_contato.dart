@@ -2,6 +2,7 @@ import 'package:bytebank/database/app_database.dart';
 import 'package:bytebank/estilos/cores.dart';
 import 'package:bytebank/modelos/contato.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FormContato extends StatefulWidget {
   const FormContato({Key? key}) : super(key: key);
@@ -77,7 +78,8 @@ class _FormContatoState extends State<FormContato> {
                                   RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)))),
                           onPressed: () {
                             if (formKey.currentState!.validate()) {
-                              criarContato(Contato(0, _controllerCampoNome.text,
+                              Provider.of<LocalDatabase>(context, listen: false)
+                                  .criarContato(Contato(0, _controllerCampoNome.text,
                                       int.tryParse(_controllerCampoConta.text) ?? 0))
                                   .then((value) => Navigator.pop(context));
                             }

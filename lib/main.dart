@@ -1,18 +1,17 @@
 import 'package:bytebank/database/app_database.dart';
-import 'package:bytebank/modelos/contato.dart';
 import 'package:bytebank/modelos/transacoes.dart';
-import 'package:bytebank/screens/dashboard/dashboard.dart';
+import 'package:bytebank/telas/home/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'modelos/saldo.dart';
 
 void main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => Saldo(0)),
-      ChangeNotifierProvider(create: (context) => Transacoes())
+      ChangeNotifierProvider(create: (context) => Transacoes()),
+      ChangeNotifierProvider(create: (context) => LocalDatabase())
     ],
     child: const BytebankApp(),
   ));
@@ -34,7 +33,7 @@ class BytebankApp extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      home: const DashBoard(),
+      home: const Home(),
     );
   }
 }

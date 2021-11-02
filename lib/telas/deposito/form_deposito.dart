@@ -41,8 +41,9 @@ class FormDeposito extends StatelessWidget {
   void _depositar(context) {
     final double? valor = double.tryParse(_controllerCampoDeposito.text.replaceAll(",", "."));
     if (valor != null) {
-      _atualizaSaldo(context, Deposito(valor));
-      Navigator.pop(context);
+      final transacao = Transacao.deposito(Deposito(valor));
+      _atualizaSaldo(context, transacao);
+      Navigator.pop(context, transacao);
     } else {
       showDialog(
           context: context,
@@ -53,8 +54,8 @@ class FormDeposito extends StatelessWidget {
     }
   }
 
-  void _atualizaSaldo(context, Deposito deposito) {
-    Provider.of<Transacoes>(context, listen: false).adicionar(Transacao.deposito(deposito));
-    Provider.of<Saldo>(context, listen: false).depositar(deposito);
+  void _atualizaSaldo(context, Transacao transacao) {
+    Provider.of<Transacoes>(context, listen: false).adicionar(transacao);
+    Provider.of<Saldo>(context, listen: false).depositar(transacao.tipoTransacao);
   }
 }

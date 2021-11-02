@@ -1,16 +1,18 @@
+import 'package:bytebank/components/confirmacao_transacao.dart';
+import 'package:bytebank/telas/home/lista.dart';
+
 import '/components/scroll_behavior.dart';
 import '/estilos/cores.dart';
 import 'widgets/saldo_card.dart';
-import '/screens/deposito/form_deposito.dart';
-import '/screens/lista_contatos/lista_contatos.dart';
-import '/screens/transferencia/form_transferencia.dart';
-import '/screens/dashboard/lista.dart';
+import '/telas/deposito/form_deposito.dart';
+import '/telas/lista_contatos/lista_contatos.dart';
+import '/telas/transferencia/form_transferencia.dart';
 import "package:flutter/material.dart";
 
 import 'widgets/bottom_bar_item.dart';
 
-class DashBoard extends StatelessWidget {
-  const DashBoard({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,17 +33,15 @@ class DashBoard extends StatelessWidget {
                   const Align(alignment: Alignment.topCenter, child: SaldoCard()),
                   ButtonBar(alignment: MainAxisAlignment.center, children: [
                     ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => FormDeposito()));
-                        },
+                        onPressed: () => _deposito(context),
                         child: const Text(
                           "Fazer deposito",
                           style: TextStyle(fontSize: 20),
                         )),
                     ElevatedButton(
                         onPressed: () {
-                          Navigator.push(
-                              context, MaterialPageRoute(builder: (context) => FormularioTransferencia()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => ListaContatos.fromTransferencia()));
                         },
                         child: const Text(
                           "Fazer transferencia",
@@ -52,13 +52,13 @@ class DashBoard extends StatelessWidget {
                     height: 30,
                   ),
                   const Text(
-                    "Transações",
+                    "Minha atividade",
                     style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white),
                   ),
                   const Divider(
                     color: Colors.grey,
                   ),
-                  const ListaTransacoes()
+                  const ListaAtividades()
                 ],
               ),
             ),
@@ -88,5 +88,14 @@ class DashBoard extends StatelessWidget {
             ),
           ),
         ));
+  }
+
+  _deposito(context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => FormDeposito()))
+        .then((transacaoRealizada) {
+      if (transacaoRealizada != null) {
+        showDialog(context: context, builder: (_) => ConfirmacaoTransacao(transacaoRealizada));
+      }
+    });
   }
 }

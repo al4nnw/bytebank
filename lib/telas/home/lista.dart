@@ -1,10 +1,11 @@
-import '/modelos/transacoes.dart';
-import '/screens/dashboard/widgets/nenhuma_transacao.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ListaTransacoes extends StatelessWidget {
-  const ListaTransacoes({Key? key}) : super(key: key);
+import '/modelos/transacoes.dart';
+import 'widgets/nenhuma_transacao.dart';
+
+class ListaAtividades extends StatelessWidget {
+  const ListaAtividades({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Consumer<Transacoes>(builder: (context, _transacoes, child) {
