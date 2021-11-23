@@ -38,6 +38,9 @@ dependencies:
   intl: ^0.17.0
   sqflite:
   path:
+  http:
+  http_interceptor:
+    
 
 dev_dependencies:
   flutter_test:

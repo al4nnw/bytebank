@@ -1,3 +1,4 @@
+import 'package:bytebank/services/web_client.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +11,7 @@ class ListaAtividades extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<Transacoes>(builder: (context, _transacoes, child) {
       if (_transacoes.transacoes.isEmpty) {
+        WebClient().procurarTransacoes();
         return const NenhumaTransacao();
       }
 
